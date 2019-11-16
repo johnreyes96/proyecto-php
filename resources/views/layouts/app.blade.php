@@ -39,7 +39,7 @@
             <nav class="nav d-flex justify-content-between">
             <a class="p-2 text-muted" href="{{ route('ciudades.index') }}">Ciudades</a>
             <a class="p-2 text-muted" href="{{ route('estado-usuarios.index') }}">Estados Usuario</a>
-            <a class="p-2 text-muted" href="#">Opción 3</a>
+            <a class="p-2 text-muted" href="{{ route('marca-vehiculos.index') }}">Marcas Vehículo</a>
             <a class="p-2 text-muted" href="#">Opción 4</a>
             <a class="p-2 text-muted" href="#">Opción 5</a>
             <a class="p-2 text-muted" href="#">Opción 6</a>
