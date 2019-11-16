@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <hr>
     <div class="container">
         <div class="row">
             <!--@include('admin.sidebar')-->
@@ -9,7 +10,7 @@
                 <div class="card">
                     <div class="card-header">Estados de usuario</div>
                     <div class="card-body">
-                        <a href="{{ url('/estado-usuarios/create') }}" class="btn btn-success btn-sm" title="Crear Estado Usuario">
+                        <a href="{{ url('/estado-usuarios/create') }}" class="btn btn-success btn-sm" title="Crear estado Usuario">
                             <i class="fa fa-plus" aria-hidden="true"></i> Crear estado de usuario
                         </a>
 
@@ -39,13 +40,13 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->Estado }}</td>
                                         <td>
-                                            <a href="{{ url('/estado-usuarios/' . $item->id) }}" title="Ver Estado de usuario"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Ver</button></a>
-                                            <a href="{{ url('/estado-usuarios/' . $item->id . '/edit') }}" title="Editar Estado de usuario"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button></a>
+                                            <a href="{{ url('/estado-usuarios/' . $item->id) }}" title="Ver estado de usuario"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Ver</button></a>
+                                            <a href="{{ url('/estado-usuarios/' . $item->id . '/edit') }}" title="Editar estado de usuario"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button></a>
 
                                             <form method="POST" action="{{ url('/estado-usuarios' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Borrar Estado de usuario" onclick="return confirm(&quot;Estás seguro que deseas eliminar el estado de usuario {{ $item->Estado }}?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Borrar</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Borrar estado de usuario" onclick="return confirm(&quot;Estás seguro que deseas eliminar el estado de usuario {{ $item->Estado }}?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Borrar</button>
                                             </form>
                                         </td>
                                     </tr>
@@ -60,4 +61,5 @@
             </div>
         </div>
     </div>
+    <br>
 @endsection

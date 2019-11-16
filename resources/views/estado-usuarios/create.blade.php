@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <hr>
     <div class="container">
         <div class="row">
             <!--@include('admin.sidebar')-->
@@ -33,4 +34,5 @@
             </div>
         </div>
     </div>
+    <br>
 @endsection
