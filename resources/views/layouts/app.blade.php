@@ -54,7 +54,7 @@
     </div>
 
     <main role="main" class="container">
-        @yield('contenido')
+        @yield('content')
     </main><!-- /.container -->
 
     <footer class="blog-footer">

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('contenido')
+@section('content')
 <div class="card bg-dark text-white">
   <img src="img/banner-car-4.jpg" class="card-img">
   <div class="card-img-overlay">
