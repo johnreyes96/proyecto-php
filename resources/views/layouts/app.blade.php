@@ -22,7 +22,7 @@
         <header class="blog-header py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="col-4 pt-1">
-                <a class="text-muted" href="#">SOVEHI</a>
+                <a class="text-muted" href="{{ url('/') }}">SOVEHI</a>
             </div>
             <div class="col-4 text-center">
                 <a class="blog-header-logo text-dark" href="#">Inicio</a>
@@ -37,7 +37,7 @@
 
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
-            <a class="p-2 text-muted" href="#">Opción 1</a>
+            <a class="p-2 text-muted" href="{{ route('ciudades.index') }}">Ciudades</a>
             <a class="p-2 text-muted" href="#">Opción 2</a>
             <a class="p-2 text-muted" href="#">Opción 3</a>
             <a class="p-2 text-muted" href="#">Opción 4</a>
