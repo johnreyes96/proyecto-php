@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-header">Ciudades</div>
                     <div class="card-body">
-                        <a href="{{ url('/ciudades/create') }}" class="btn btn-success btn-sm" title="Add New Ciudade">
+                        <a href="{{ url('/ciudades/create') }}" class="btn btn-success btn-sm" title="Crear ciudad">
                             <i class="fa fa-plus" aria-hidden="true"></i> Crear ciudad
                         </a>
 
@@ -41,12 +41,12 @@
                                         <td>{{ $item->NombreCiudad }}</td>
                                         <td>
                                             <a href="{{ url('/ciudades/' . $item->id) }}" title="Ver ciudad"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Ver</button></a>
-                                            <a href="{{ url('/ciudades/' . $item->id . '/edit') }}" title="Editar Ciudad"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button></a>
+                                            <a href="{{ url('/ciudades/' . $item->id . '/edit') }}" title="Editar ciudad"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button></a>
 
                                             <form method="POST" action="{{ url('/ciudades' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Borrar Ciudad" onclick="return confirm(&quot;Estás seguro que deseas eliminar la ciudad {{ $item->NombreCiudad }}?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Borrar</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Borrar ciudad" onclick="return confirm(&quot;Estás seguro que deseas eliminar la ciudad {{ $item->NombreCiudad }}?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Borrar</button>
                                             </form>
                                         </td>
                                     </tr>
