@@ -101,7 +101,7 @@ class CiudadesController extends Controller
         $ciudade = Ciudades::findOrFail($id);
         $ciudade->update($requestData);
 
-        return redirect('ciudades')->with('flash_message', 'Ciudade actualizada');
+        return redirect('ciudades')->with('flash_message', 'Ciudad actualizada');
     }
 
     /**
@@ -115,6 +115,6 @@ class CiudadesController extends Controller
     {
         Ciudades::destroy($id);
 
-        return redirect('ciudades')->with('flash_message', 'Ciudade eliminada');
+        return redirect('ciudades')->with('flash_message', 'Ciudad eliminada');
     }
 }
