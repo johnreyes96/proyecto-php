@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('ciudades', 'CiudadesController');
+Route::resource('estado-usuarios', 'EstadoUsuariosController');
