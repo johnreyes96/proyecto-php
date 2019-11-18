@@ -44,7 +44,7 @@
             <a class="p-2 text-muted" href="{{ route('color-vehiculos.index') }}">Colores Vehículo</a>
             <a class="p-2 text-muted" href="{{ route('modalidad-servicio.index') }}">Modalidades Servicio</a>
             <a class="p-2 text-muted" href="{{ route('tipo-servicio.index') }}">Tipos Servicio</a>
-            <a class="p-2 text-muted" href="#">Opción 8</a>
+            <a class="p-2 text-muted" href="{{ route('tipo-vehiculo.index') }}">Tipos Vehículo</a>
             <a class="p-2 text-muted" href="#">Opción 9</a>
             <a class="p-2 text-muted" href="#">Opción 10</a>
             <a class="p-2 text-muted" href="#">Opción 11</a>
