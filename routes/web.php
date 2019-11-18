@@ -20,3 +20,4 @@ Route::resource('estado-usuarios', 'EstadoUsuariosController');
 Route::resource('marca-vehiculos', 'MarcaVehiculosController');
 Route::resource('modelo-vehiculos', 'ModeloVehiculosController');
 Route::resource('color-vehiculos', 'ColorVehiculosController');
+Route::resource('modalidad-servicio', 'ModalidadServicioController');
