@@ -23,3 +23,4 @@ Route::resource('color-vehiculos', 'ColorVehiculosController');
 Route::resource('modalidad-servicio', 'ModalidadServicioController');
 Route::resource('tipo-servicio', 'TipoServicioController');
 Route::resource('tipo-vehiculo', 'TipoVehiculoController');
+Route::resource('roles', 'RolesController');
