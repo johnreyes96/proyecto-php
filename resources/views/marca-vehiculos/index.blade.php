@@ -8,7 +8,7 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Marca de vehículos</div>
+                    <div class="card-header">Marcas de vehículo</div>
                     <div class="card-body">
                         <a href="{{ url('/marca-vehiculos/create') }}" class="btn btn-success btn-sm" title="Crear marca vehículo">
                             <i class="fa fa-plus" aria-hidden="true"></i> Crear marca de vehículo
