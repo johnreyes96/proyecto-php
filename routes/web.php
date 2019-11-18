@@ -22,3 +22,4 @@ Route::resource('modelo-vehiculos', 'ModeloVehiculosController');
 Route::resource('color-vehiculos', 'ColorVehiculosController');
 Route::resource('modalidad-servicio', 'ModalidadServicioController');
 Route::resource('tipo-servicio', 'TipoServicioController');
+Route::resource('tipo-vehiculo', 'TipoVehiculoController');
