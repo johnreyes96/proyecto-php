@@ -19,3 +19,4 @@ Route::resource('ciudades', 'CiudadesController');
 Route::resource('estado-usuarios', 'EstadoUsuariosController');
 Route::resource('marca-vehiculos', 'MarcaVehiculosController');
 Route::resource('modelo-vehiculos', 'ModeloVehiculosController');
+Route::resource('color-vehiculos', 'ColorVehiculosController');
