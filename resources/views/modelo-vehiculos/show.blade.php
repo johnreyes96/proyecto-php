@@ -8,7 +8,7 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Modelo vehículo #{{ $modelovehiculo->id }}</div>
+                    <div class="card-header">Modelo de vehículo #{{ $modelovehiculo->id }}</div>
                     <div class="card-body">
 
                         <a href="{{ url('/modelo-vehiculos') }}" title="Regresar"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar</button></a>
