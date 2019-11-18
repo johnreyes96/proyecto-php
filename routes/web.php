@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::resource('ciudades', 'CiudadesController');
 Route::resource('estado-usuarios', 'EstadoUsuariosController');
 Route::resource('marca-vehiculos', 'MarcaVehiculosController');
+Route::resource('modelo-vehiculos', 'ModeloVehiculosController');
