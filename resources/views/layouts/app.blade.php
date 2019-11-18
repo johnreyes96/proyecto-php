@@ -46,7 +46,7 @@
             <a class="p-2 text-muted" href="{{ route('tipo-servicio.index') }}">Tipos Servicio</a>
             <a class="p-2 text-muted" href="{{ route('tipo-vehiculo.index') }}">Tipos Vehículo</a>
             <a class="p-2 text-muted" href="{{ route('roles.index') }}">Roles</a>
-            <a class="p-2 text-muted" href="#">Opción 10</a>
+            <a class="p-2 text-muted" href="{{ route('turnos-trabajo.index') }}">Turnos Trabajo</a>
             <a class="p-2 text-muted" href="#">Opción 11</a>
             <a class="p-2 text-muted" href="#">Opción 12</a>
             </nav>
