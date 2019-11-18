@@ -42,7 +42,7 @@
             <a class="p-2 text-muted" href="{{ route('marca-vehiculos.index') }}">Marcas Vehículo</a>
             <a class="p-2 text-muted" href="{{ route('modelo-vehiculos.index') }}">Modelos Vehículo</a>
             <a class="p-2 text-muted" href="{{ route('color-vehiculos.index') }}">Colores Vehículo</a>
-            <a class="p-2 text-muted" href="#">Opción 6</a>
+            <a class="p-2 text-muted" href="{{ route('modalidad-servicio.index') }}">Modalidades Servicio</a>
             <a class="p-2 text-muted" href="#">Opción 7</a>
             <a class="p-2 text-muted" href="#">Opción 8</a>
             <a class="p-2 text-muted" href="#">Opción 9</a>
