@@ -37,18 +37,18 @@
 
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
-                <a class="p-2 text-muted" href="{{ route('vehiculos.index') }}">Vehículos</a>
-                <a class="p-2 text-muted" href="{{ route('ciudades.index') }}">Ciudades</a>
-                <a class="p-2 text-muted" href="{{ route('estado-usuarios.index') }}">Estados Usuario</a>
-                <a class="p-2 text-muted" href="{{ route('marca-vehiculos.index') }}">Marcas Vehículo</a>
-                <a class="p-2 text-muted" href="{{ route('modelo-vehiculos.index') }}">Modelos Vehículo</a>
-                <a class="p-2 text-muted" href="{{ route('color-vehiculos.index') }}">Colores Vehículo</a>
-                <a class="p-2 text-muted" href="{{ route('modalidad-servicio.index') }}">Modalidades Servicio</a>
-                <a class="p-2 text-muted" href="{{ route('tipo-servicio.index') }}">Tipos Servicio</a>
-                <a class="p-2 text-muted" href="{{ route('tipo-vehiculo.index') }}">Tipos Vehículo</a>
-                <a class="p-2 text-muted" href="{{ route('roles.index') }}">Roles</a>
-                <a class="p-2 text-muted" href="{{ route('turnos-trabajo.index') }}">Turnos Trabajo</a>
-                <a class="p-2 text-muted" href="#">Opción 12</a>
+            <a class="p-2 text-muted" href="{{ route('ciudades.index') }}">Ciudades</a>
+            <a class="p-2 text-muted" href="{{ route('estado-usuarios.index') }}">Estados Usuario</a>
+            <a class="p-2 text-muted" href="{{ route('marca-vehiculos.index') }}">Marcas Vehículo</a>
+            <a class="p-2 text-muted" href="{{ route('modelo-vehiculos.index') }}">Modelos Vehículo</a>
+            <a class="p-2 text-muted" href="{{ route('color-vehiculos.index') }}">Colores Vehículo</a>
+            <a class="p-2 text-muted" href="{{ route('modalidad-servicio.index') }}">Modalidades Servicio</a>
+            <a class="p-2 text-muted" href="{{ route('tipo-servicio.index') }}">Tipos Servicio</a>
+            <a class="p-2 text-muted" href="{{ route('tipo-vehiculo.index') }}">Tipos Vehículo</a>
+            <a class="p-2 text-muted" href="{{ route('roles.index') }}">Roles</a>
+            <a class="p-2 text-muted" href="{{ route('turnos-trabajo.index') }}">Turnos Trabajo</a>
+            <a class="p-2 text-muted" href="#">Opción 11</a>
+            <a class="p-2 text-muted" href="#">Opción 12</a>
             </nav>
         </div>
     </div>

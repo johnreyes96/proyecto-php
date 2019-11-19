@@ -25,4 +25,3 @@ Route::resource('tipo-servicio', 'TipoServicioController');
 Route::resource('tipo-vehiculo', 'TipoVehiculoController');
 Route::resource('roles', 'RolesController');
 Route::resource('turnos-trabajo', 'TurnosTrabajoController');
-Route::resource('vehiculos', 'VehiculosController');
