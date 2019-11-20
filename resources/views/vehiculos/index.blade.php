@@ -1,21 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+    <hr>
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
+            <!--@include('admin.sidebar')-->
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Vehiculos</div>
+                    <div class="card-header">Vehículos</div>
                     <div class="card-body">
-                        <a href="{{ url('/vehiculos/create') }}" class="btn btn-success btn-sm" title="Add New Vehiculo">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                        <a href="{{ url('/vehiculos/create') }}" class="btn btn-success btn-sm" title="Crear vehículo">
+                            <i class="fa fa-plus" aria-hidden="true"></i> Crear vehículo
                         </a>
 
                         <form method="GET" action="{{ url('/vehiculos') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
+                                <input type="text" class="form-control" name="search" placeholder="Buscar..." value="{{ request('search') }}">
                                 <span class="input-group-append">
                                     <button class="btn btn-secondary" type="submit">
                                         <i class="fa fa-search"></i>
@@ -30,22 +31,22 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Placa</th><th>IdTipoVehiculo</th><th>IdMarca</th><th>Actions</th>
+                                        <th>#</th><th>Placa</th><th>Tipo vehículo</th><th>Modalidad Servicio</th><th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($vehiculos as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->Placa }}</td><td>{{ $item->IdTipoVehiculo }}</td><td>{{ $item->IdMarca }}</td>
+                                        <td>{{ $item->Placa }}</td><td>{{ $item->IdTipoVehiculo }}</td><td>{{ $item->IdModalidadServicio }}</td>
                                         <td>
-                                            <a href="{{ url('/vehiculos/' . $item->id) }}" title="View Vehiculo"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/vehiculos/' . $item->id . '/edit') }}" title="Edit Vehiculo"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <a href="{{ url('/vehiculos/' . $item->id) }}" title="Ver vehículo"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Ver</button></a>
+                                            <a href="{{ url('/vehiculos/' . $item->id . '/edit') }}" title="Editar vehículo"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button></a>
 
                                             <form method="POST" action="{{ url('/vehiculos' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Vehiculo" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Borrar vehículo" onclick="return confirm(&quot;Estás seguro que deseas eliminar el vehículo con placas {{ $item->Placa }}?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Borrar</button>
                                             </form>
                                         </td>
                                     </tr>
@@ -60,4 +61,5 @@
             </div>
         </div>
     </div>
+    <br>
 @endsection

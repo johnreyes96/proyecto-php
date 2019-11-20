@@ -18,7 +18,7 @@ class VehiculosController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 25;
+        $perPage = 10;
 
         if (!empty($keyword)) {
             $vehiculos = Vehiculo::where('Placa', 'LIKE', "%$keyword%")
@@ -62,7 +62,7 @@ class VehiculosController extends Controller
         
         Vehiculo::create($requestData);
 
-        return redirect('vehiculos')->with('flash_message', 'Vehiculo added!');
+        return redirect('vehiculos')->with('flash_message', 'Vehículo creado');
     }
 
     /**
@@ -109,7 +109,7 @@ class VehiculosController extends Controller
         $vehiculo = Vehiculo::findOrFail($id);
         $vehiculo->update($requestData);
 
-        return redirect('vehiculos')->with('flash_message', 'Vehiculo updated!');
+        return redirect('vehiculos')->with('flash_message', 'Vehículo actualizado');
     }
 
     /**
@@ -123,6 +123,6 @@ class VehiculosController extends Controller
     {
         Vehiculo::destroy($id);
 
-        return redirect('vehiculos')->with('flash_message', 'Vehiculo deleted!');
+        return redirect('vehiculos')->with('flash_message', 'Vehículo borrado');
     }
 }

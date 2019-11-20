@@ -1,15 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+    <hr>
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
+            <!--@include('admin.sidebar')-->
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Create New Vehiculo</div>
+                    <div class="card-header">Crear un nuevo vehículo</div>
                     <div class="card-body">
-                        <a href="{{ url('/vehiculos') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/vehiculos') }}" title="Regresar"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar</button></a>
                         <br />
                         <br />
 
@@ -33,4 +34,5 @@
             </div>
         </div>
     </div>
+    <br>
 @endsection
