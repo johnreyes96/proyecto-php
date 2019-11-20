@@ -15,7 +15,7 @@ class CreateTipoVehiculosTable extends Migration
         Schema::create('tipo_vehiculos', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('TipoVehiculo')->nullable();
+            $table->string('TipoVehiculo', 100);
             });
     }
 

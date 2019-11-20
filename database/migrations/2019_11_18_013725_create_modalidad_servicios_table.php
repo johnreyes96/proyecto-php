@@ -15,7 +15,7 @@ class CreateModalidadServiciosTable extends Migration
         Schema::create('modalidad_servicios', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('ModalidadServicio')->nullable();
+            $table->string('ModalidadServicio', 50);
             });
     }
 

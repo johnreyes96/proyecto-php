@@ -15,7 +15,7 @@ class CreateTurnosTrabajosTable extends Migration
         Schema::create('turnos_trabajos', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('TurnoTrabajo')->nullable();
+            $table->string('TurnoTrabajo', 150);
             });
     }
 

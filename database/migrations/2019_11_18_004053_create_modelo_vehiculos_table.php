@@ -15,7 +15,7 @@ class CreateModeloVehiculosTable extends Migration
         Schema::create('modelo_vehiculos', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('Modelo')->nullable();
+            $table->string('Modelo', 4);
             });
     }
 
