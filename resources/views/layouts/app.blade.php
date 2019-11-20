@@ -38,6 +38,7 @@
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
                 <a class="p-2 text-muted" href="{{ route('vehiculos.index') }}">Vehículos</a>
+                <a class="p-2 text-muted" href="{{ route('linea-vehiculos.index') }}">Líneas Vehículo</a>
                 <a class="p-2 text-muted" href="{{ route('ciudades.index') }}">Ciudades</a>
                 <a class="p-2 text-muted" href="{{ route('estado-usuarios.index') }}">Estados Usuario</a>
                 <a class="p-2 text-muted" href="{{ route('marca-vehiculos.index') }}">Marcas Vehículo</a>
@@ -48,7 +49,6 @@
                 <a class="p-2 text-muted" href="{{ route('tipo-vehiculo.index') }}">Tipos Vehículo</a>
                 <a class="p-2 text-muted" href="{{ route('roles.index') }}">Roles</a>
                 <a class="p-2 text-muted" href="{{ route('turnos-trabajo.index') }}">Turnos Trabajo</a>
-                <a class="p-2 text-muted" href="#">Opción 12</a>
             </nav>
         </div>
     </div>
