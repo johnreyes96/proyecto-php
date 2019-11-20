@@ -13,12 +13,6 @@
 
                         <a href="{{ url('/estado-usuarios') }}" title="Regresar"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar</button></a>
                         <a href="{{ url('/estado-usuarios/' . $estadousuario->id . '/edit') }}" title="Editar estado de usuario"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button></a>
-
-                        <form method="POST" action="{{ url('estadousuarios' . '/' . $estadousuario->id) }}" accept-charset="UTF-8" style="display:inline">
-                            {{ method_field('DELETE') }}
-                            {{ csrf_field() }}
-                            <button type="submit" class="btn btn-danger btn-sm" title="Borrar estado de usuario" onclick="return confirm(&quot;Estás seguro que deseas eliminar el estado de usuario {{ $estadousuario->Estado }}?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Borrar</button>
-                        </form>
                         <br/>
                         <br/>
 
