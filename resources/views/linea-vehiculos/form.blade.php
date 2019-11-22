@@ -5,7 +5,11 @@
 </div>
 <div class="form-group {{ $errors->has('IdMarca') ? 'has-error' : ''}}">
     <label for="IdMarca" class="control-label">Marca</label>
-    <input class="form-control" name="IdMarca" type="number" id="IdMarca" value="{{ isset($lineavehiculo->IdMarca) ? $lineavehiculo->IdMarca : ''}}" >
+    <select class="form-control" name="IdMarca" id="IdMarca" >
+        @foreach($marcas as $marca)
+            <option value="{{ $marca->id }}" {{ isset($lineavehiculo->IdMarca) && $lineavehiculo->IdMarca == $marca->id ? 'selected' : ''}} >{{ $marca->Marca }}</option>
+        @endforeach
+    </select>
     {!! $errors->first('IdMarca', '<p class="help-block">:message</p>') !!}
 </div>
 

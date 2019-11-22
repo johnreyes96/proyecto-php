@@ -26,7 +26,7 @@
                             {{ method_field('PATCH') }}
                             {{ csrf_field() }}
 
-                            @include ('linea-vehiculos.form', ['formMode' => 'edit'])
+                            @include ('linea-vehiculos.form', ['formMode' => 'edit', 'marcas' => $marcas])
 
                         </form>
 

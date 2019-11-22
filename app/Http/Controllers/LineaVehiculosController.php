@@ -7,6 +7,7 @@ use App\Http\Requests;
 
 use App\LineaVehiculo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LineaVehiculosController extends Controller
 {
@@ -38,7 +39,8 @@ class LineaVehiculosController extends Controller
      */
     public function create()
     {
-        return view('linea-vehiculos.create');
+        $marcas = DB::select('CALL getAllMarcas()');
+        return view('linea-vehiculos.create', compact('marcas'));
     }
 
     /**
@@ -67,7 +69,8 @@ class LineaVehiculosController extends Controller
      */
     public function show($id)
     {
-        $lineavehiculo = LineaVehiculo::findOrFail($id);
+        $lineavehiculo = LineaVehiculo::join('marca_vehiculos', 'linea_vehiculos.IdMarca', '=', 'marca_vehiculos.id')
+            ->findOrFail($id);
 
         return view('linea-vehiculos.show', compact('lineavehiculo'));
     }
@@ -82,8 +85,9 @@ class LineaVehiculosController extends Controller
     public function edit($id)
     {
         $lineavehiculo = LineaVehiculo::findOrFail($id);
+        $marcas = DB::select('CALL getAllMarcas()');
 
-        return view('linea-vehiculos.edit', compact('lineavehiculo'));
+        return view('linea-vehiculos.edit', compact('lineavehiculo', 'marcas'));
     }
 
     /**

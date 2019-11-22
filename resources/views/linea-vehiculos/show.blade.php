@@ -22,7 +22,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $lineavehiculo->id }}</td>
                                     </tr>
-                                    <tr><th> Línea Vehículo </th><td> {{ $lineavehiculo->LineaVehiculo }} </td></tr><tr><th> Marca </th><td> {{ $lineavehiculo->IdMarca }} </td></tr>
+                                    <tr><th> Línea Vehículo </th><td> {{ $lineavehiculo->LineaVehiculo }} </td></tr><tr><th> Marca </th><td> {{ $lineavehiculo->Marca }} </td></tr>
                                 </tbody>
                             </table>
                         </div>
