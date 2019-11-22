@@ -1,6 +1,10 @@
 <div class="form-group {{ $errors->has('IdTipoServicio') ? 'has-error' : ''}}">
     <label for="IdTipoServicio" class="control-label">Tipo Servicio</label>
-    <input class="form-control" name="IdTipoServicio" type="number" id="IdTipoServicio" value="{{ isset($estadoservicio->IdTipoServicio) ? $estadoservicio->IdTipoServicio : ''}}" >
+    <select class="form-control" name="IdTipoServicio" id="IdTipoServicio" >
+        @foreach($tipoServicios as $tipoServicio)
+            <option value="{{ $tipoServicio->id }}" {{ isset($estadoservicio->IdTipoServicio) && $estadoservicio->IdTipoServicio == $tipoServicio->id ? 'selected' : ''}} >{{ $tipoServicio->TipoServicio }}</option>
+        @endforeach
+    </select>
     {!! $errors->first('IdTipoServicio', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('EstadoServicio') ? 'has-error' : ''}}">

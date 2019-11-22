@@ -7,6 +7,7 @@ use App\Http\Requests;
 
 use App\EstadoServicio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EstadoServiciosController extends Controller
 {
@@ -38,7 +39,8 @@ class EstadoServiciosController extends Controller
      */
     public function create()
     {
-        return view('estado-servicios.create');
+        $tipoServicios = DB::select('CALL getAllTipoServicios()');
+        return view('estado-servicios.create', compact('tipoServicios'));
     }
 
     /**
@@ -67,7 +69,8 @@ class EstadoServiciosController extends Controller
      */
     public function show($id)
     {
-        $estadoservicio = EstadoServicio::findOrFail($id);
+        $estadoservicio = EstadoServicio::join('tipo_servicios', 'estado_servicios.IdTipoServicio', '=', 'tipo_servicios.id')
+            ->findOrFail($id);
 
         return view('estado-servicios.show', compact('estadoservicio'));
     }
@@ -81,9 +84,10 @@ class EstadoServiciosController extends Controller
      */
     public function edit($id)
     {
+        $tipoServicios = DB::select('CALL getAllTipoServicios()');
         $estadoservicio = EstadoServicio::findOrFail($id);
 
-        return view('estado-servicios.edit', compact('estadoservicio'));
+        return view('estado-servicios.edit', compact('estadoservicio', 'tipoServicios'));
     }
 
     /**

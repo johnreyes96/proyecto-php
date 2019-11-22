@@ -23,7 +23,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $estadoservicio->id }}</td>
                                     </tr>
-                                    <tr><th> Tipo Servicio </th><td> {{ $estadoservicio->IdTipoServicio }} </td></tr><tr><th> Estado Servicio </th><td> {{ $estadoservicio->EstadoServicio }} </td></tr>
+                                    <tr><th> Tipo Servicio </th><td> {{ $estadoservicio->TipoServicio }} </td></tr><tr><th> Estado Servicio </th><td> {{ $estadoservicio->EstadoServicio }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

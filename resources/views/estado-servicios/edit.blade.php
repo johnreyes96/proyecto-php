@@ -27,7 +27,7 @@
                             {{ method_field('PATCH') }}
                             {{ csrf_field() }}
 
-                            @include ('estado-servicios.form', ['formMode' => 'edit'])
+                            @include ('estado-servicios.form', ['formMode' => 'edit', 'tipoServicios' => $tipoServicios])
 
                         </form>
 

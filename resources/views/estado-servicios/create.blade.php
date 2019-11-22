@@ -26,7 +26,7 @@
                         <form method="POST" action="{{ url('/estado-servicios') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            @include ('estado-servicios.form', ['formMode' => 'create'])
+                            @include ('estado-servicios.form', ['formMode' => 'create', 'tipoServicios' => $tipoServicios])
 
                         </form>
 
