@@ -10,21 +10,30 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Middleware\PermissionRoute;
 
 Route::get('/', function () {
-    return view('home');
+    return view('auth.login');
 });
 
-Route::resource('ciudades', 'CiudadesController');
-Route::resource('estado-usuarios', 'EstadoUsuariosController');
-Route::resource('marca-vehiculos', 'MarcaVehiculosController');
-Route::resource('modelo-vehiculos', 'ModeloVehiculosController');
-Route::resource('color-vehiculos', 'ColorVehiculosController');
-Route::resource('modalidad-servicio', 'ModalidadServicioController');
-Route::resource('tipo-servicio', 'TipoServicioController');
-Route::resource('tipo-vehiculo', 'TipoVehiculoController');
-Route::resource('roles', 'RolesController');
-Route::resource('turnos-trabajo', 'TurnosTrabajoController');
-Route::resource('vehiculos', 'VehiculosController');
-Route::resource('linea-vehiculos', 'LineaVehiculosController');
-Route::resource('estado-servicios', 'EstadoServiciosController');
+Route::group(['prefix' => 'cpanel', 'middleware' => 'auth'], function() {
+
+	// Obtener perfiles
+	Route::get('getObjectsPermissions','ObjetosController@obtenerObjetosRol');
+
+	Route::get('home', [
+		'uses' 	=> 'HomeController@index',
+		'as' 	=> 'home.index'
+	]);
+
+	Route::get('danied', [
+		'uses' 	=> 'HomeController@denied',
+		'as' 	=> 'danied.index'
+	]);
+});
+
+Auth::routes(['register' => false]);
+Auth::routes();
+
+
+
