@@ -91,6 +91,7 @@ class VehiculosController extends Controller
         $vehiculo = Vehiculo::join('tipo_vehiculos', 'vehiculos.IdTipoVehiculo', '=', 'tipo_vehiculos.id')
             ->join('marca_vehiculos', 'vehiculos.IdMarca', '=', 'marca_vehiculos.id')
             ->join('modelo_vehiculos', 'vehiculos.IdModelo', '=', 'modelo_vehiculos.id')
+            ->join('color_vehiculos', 'vehiculos.IdColor', '=', 'color_vehiculos.id')
             ->join('ciudades', 'vehiculos.IdCiudadLicencia', '=', 'ciudades.id')
             ->join('users', 'vehiculos.IdUsuario', '=', 'users.id')
             ->join('modalidad_servicios', 'vehiculos.IdModalidadServicio', '=', 'modalidad_servicios.id')
