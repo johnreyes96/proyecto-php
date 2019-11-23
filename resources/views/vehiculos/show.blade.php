@@ -27,7 +27,7 @@
                                     <tr><th> Marca </th><td> {{ $vehiculo->Marca }} </td></tr>
                                     <tr><th> Modelo </th><td> {{ $vehiculo->Modelo }} </td></tr>
                                     <tr><th> Color </th><td> {{ $vehiculo->Color }} </td></tr>
-                                    <tr><th> Licencia Tránsito </th><td> {{ $vehiculo->Licenciatransito }} </td></tr>
+                                    <tr><th> Licencia Tránsito </th><td> {{ $vehiculo->LicenciaTransito }} </td></tr>
                                     <tr><th> Ciudad Licencia </th><td> {{ $vehiculo->NombreCiudad }} </td></tr>
                                     <tr><th> Cliente </th><td> {{ $vehiculo->Nombres }} {{ $vehiculo->Apellidos }} </td></tr>
                                     <tr><th> Modalidad Servicio </th><td> {{ $vehiculo->ModalidadServicio }} </td></tr>
