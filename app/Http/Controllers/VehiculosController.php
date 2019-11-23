@@ -7,6 +7,7 @@ use App\Http\Requests;
 
 use App\Vehiculo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VehiculosController extends Controller
 {
@@ -45,7 +46,12 @@ class VehiculosController extends Controller
      */
     public function create()
     {
-        return view('vehiculos.create');
+        $tipoVehiculos = DB::select('CALL getAllTipoVehiculos()');
+        $marcas = DB::select('CALL getAllMarcas()');
+        $modeloVehiculos = DB::select('CALL getAllModeloVehiculos()');
+        $colorVehiculos = DB::select('CALL getAllColorVehiculos()');
+        $ciudades = DB::select('CALL getAllCiudades()');
+        return view('vehiculos.create', compact('tipoVehiculos', 'marcas', 'modeloVehiculos', 'colorVehiculos', 'ciudades'));
     }
 
     /**
@@ -74,7 +80,11 @@ class VehiculosController extends Controller
      */
     public function show($id)
     {
-        $vehiculo = Vehiculo::findOrFail($id);
+        $vehiculo = Vehiculo::join('tipo_vehiculos', 'vehiculos.IdTipoVehiculo', '=', 'tipo_vehiculos.id')
+            ->join('marca_vehiculos', 'vehiculos.IdMarca', '=', 'marca_vehiculos.id')
+            ->join('modelo_vehiculos', 'vehiculos.IdModelo', '=', 'modelo_vehiculos.id')
+            ->join('ciudades', 'vehiculos.IdCiudadLicencia', '=', 'ciudades.id')
+            ->findOrFail($id);
 
         return view('vehiculos.show', compact('vehiculo'));
     }
@@ -88,9 +98,14 @@ class VehiculosController extends Controller
      */
     public function edit($id)
     {
+        $tipoVehiculos = DB::select('CALL getAllTipoVehiculos()');
+        $marcas = DB::select('CALL getAllMarcas()');
+        $modeloVehiculos = DB::select('CALL getAllModeloVehiculos()');
+        $colorVehiculos = DB::select('CALL getAllColorVehiculos()');
+        $ciudades = DB::select('CALL getAllCiudades()');
         $vehiculo = Vehiculo::findOrFail($id);
 
-        return view('vehiculos.edit', compact('vehiculo'));
+        return view('vehiculos.edit', compact('vehiculo', 'tipoVehiculos', 'marcas', 'modeloVehiculos', 'colorVehiculos', 'ciudades'));
     }
 
     /**

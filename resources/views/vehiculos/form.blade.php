@@ -5,22 +5,38 @@
 </div>
 <div class="form-group {{ $errors->has('IdTipoVehiculo') ? 'has-error' : ''}}">
     <label for="IdTipoVehiculo" class="control-label">Tipo vehículo</label>
-    <input class="form-control" name="IdTipoVehiculo" type="number" id="IdTipoVehiculo" value="{{ isset($vehiculo->IdTipoVehiculo) ? $vehiculo->IdTipoVehiculo : ''}}" >
+    <select class="form-control" name="IdTipoVehiculo" id="IdTipoVehiculo" >
+        @foreach($tipoVehiculos as $tipoVehiculo)
+            <option value="{{ $tipoVehiculo->id }}" {{ isset($vehiculo->IdTipoVehiculo) && $vehiculo->IdTipoVehiculo == $tipoVehiculo->id ? 'selected' : ''}} >{{ $tipoVehiculo->TipoVehiculo }}</option>
+        @endforeach
+    </select>
     {!! $errors->first('IdTipoVehiculo', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('IdMarca') ? 'has-error' : ''}}">
     <label for="IdMarca" class="control-label">Marca</label>
-    <input class="form-control" name="IdMarca" type="number" id="IdMarca" value="{{ isset($vehiculo->IdMarca) ? $vehiculo->IdMarca : ''}}" >
+    <select class="form-control" name="IdMarca" id="IdMarca" >
+        @foreach($marcas as $marca)
+            <option value="{{ $marca->id }}" {{ isset($vehiculo->IdMarca) && $vehiculo->IdMarca == $marca->id ? 'selected' : ''}} >{{ $marca->Marca }}</option>
+        @endforeach
+    </select>
     {!! $errors->first('IdMarca', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('IdModelo') ? 'has-error' : ''}}">
     <label for="IdModelo" class="control-label">Modelo</label>
-    <input class="form-control" name="IdModelo" type="number" id="IdModelo" value="{{ isset($vehiculo->IdModelo) ? $vehiculo->IdModelo : ''}}" >
+    <select class="form-control" name="IdModelo" id="IdModelo" >
+        @foreach($modeloVehiculos as $modeloVehiculo)
+            <option value="{{ $modeloVehiculo->id }}" {{ isset($vehiculo->IdModelo) && $vehiculo->IdModelo == $modeloVehiculo->id ? 'selected' : ''}} >{{ $modeloVehiculo->Modelo }}</option>
+        @endforeach
+    </select>
     {!! $errors->first('IdModelo', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('IdColor') ? 'has-error' : ''}}">
     <label for="IdColor" class="control-label">Color</label>
-    <input class="form-control" name="IdColor" type="number" id="IdColor" value="{{ isset($vehiculo->IdColor) ? $vehiculo->IdColor : ''}}" >
+    <select class="form-control" name="IdColor" id="IdColor" >
+        @foreach($colorVehiculos as $colorVehiculo)
+            <option value="{{ $colorVehiculo->id }}" {{ isset($vehiculo->IdColor) && $vehiculo->IdColor == $colorVehiculo->id ? 'selected' : ''}} >{{ $colorVehiculo->Color }}</option>
+        @endforeach
+    </select>
     {!! $errors->first('IdColor', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('LicenciaTransito') ? 'has-error' : ''}}">
@@ -30,7 +46,11 @@
 </div>
 <div class="form-group {{ $errors->has('IdCiudadLicencia') ? 'has-error' : ''}}">
     <label for="IdCiudadLicencia" class="control-label">Ciudad Licencia</label>
-    <input class="form-control" name="IdCiudadLicencia" type="number" id="IdCiudadLicencia" value="{{ isset($vehiculo->IdCiudadLicencia) ? $vehiculo->IdCiudadLicencia : ''}}" >
+    <select class="form-control" name="IdCiudadLicencia" id="IdCiudadLicencia" >
+        @foreach($ciudades as $ciudad)
+            <option value="{{ $ciudad->id }}" {{ isset($vehiculo->IdCiudadLicencia) && $vehiculo->IdCiudadLicencia == $ciudad->id ? 'selected' : ''}} >{{ $ciudad->NombreCiudad }}</option>
+        @endforeach
+    </select>
     {!! $errors->first('IdCiudadLicencia', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('IdUsuario') ? 'has-error' : ''}}">

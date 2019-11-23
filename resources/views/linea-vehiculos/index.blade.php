@@ -38,12 +38,12 @@
                                 @foreach($lineavehiculos as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->LineaVehiculo }}</td><td>{{ $item->IdMarca }}</td>
+                                        <td>{{ $item->LineaVehiculo }}</td><td>{{ $item->Marca }}</td>
                                         <td>
-                                            <a href="{{ url('/linea-vehiculos/' . $item->id) }}" title="Ver línea vehículo"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Ver</button></a>
-                                            <a href="{{ url('/linea-vehiculos/' . $item->id . '/edit') }}" title="Editar línea vehículo"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button></a>
+                                            <a href="{{ url('/linea-vehiculos/' . $item->idLinea) }}" title="Ver línea vehículo"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Ver</button></a>
+                                            <a href="{{ url('/linea-vehiculos/' . $item->idLinea . '/edit') }}" title="Editar línea vehículo"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button></a>
 
-                                            <form method="POST" action="{{ url('/linea-vehiculos' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                            <form method="POST" action="{{ url('/linea-vehiculos' . '/' . $item->idLinea) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
                                                 <button type="submit" class="btn btn-danger btn-sm" title="Borrar línea vehículo" onclick="return confirm(&quot;Estás seguro que deseas eliminar la línea de vehículo {{ $item->LineaVehiculo }}?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Borrar</button>

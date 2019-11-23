@@ -25,7 +25,12 @@
                         <form method="POST" action="{{ url('/vehiculos') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            @include ('vehiculos.form', ['formMode' => 'create'])
+                            @include ('vehiculos.form', ['formMode' => 'create',
+                                'tipoVehiculos' => $tipoVehiculos, 
+                                'marcas' => $marcas,
+                                'modeloVehiculos' => $modeloVehiculos,
+                                'colorVehiculos' => $colorVehiculos,
+                                'ciudades' => $ciudades])
 
                         </form>
 

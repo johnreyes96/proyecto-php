@@ -26,7 +26,12 @@
                             {{ method_field('PATCH') }}
                             {{ csrf_field() }}
 
-                            @include ('vehiculos.form', ['formMode' => 'edit'])
+                            @include ('vehiculos.form', ['formMode' => 'edit',
+                                'tipoVehiculos' => $tipoVehiculos,
+                                'marcas' => $marcas,
+                                'modeloVehiculos' => $modeloVehiculos,
+                                'colorVehiculos' => $colorVehiculos,
+                                'ciudades' => $ciudades])
 
                         </form>
 

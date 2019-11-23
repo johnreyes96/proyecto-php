@@ -24,9 +24,13 @@ class LineaVehiculosController extends Controller
         if (!empty($keyword)) {
             $lineavehiculos = LineaVehiculo::where('LineaVehiculo', 'LIKE', "%$keyword%")
                 ->orWhere('IdMarca', 'LIKE', "%$keyword%")
-                ->latest()->paginate($perPage);
+                ->join('marca_vehiculos', 'linea_vehiculos.IdMarca', '=', 'marca_vehiculos.id')
+                ->select('linea_vehiculos.LineaVehiculo', 'linea_vehiculos.id as idLinea', 'marca_vehiculos.Marca')
+                ->latest('linea_vehiculos.created_at')->paginate($perPage);
         } else {
-            $lineavehiculos = LineaVehiculo::latest()->paginate($perPage);
+            $lineavehiculos = LineaVehiculo::join('marca_vehiculos', 'linea_vehiculos.IdMarca', '=', 'marca_vehiculos.id')
+            ->select('linea_vehiculos.LineaVehiculo', 'linea_vehiculos.id as idLinea', 'marca_vehiculos.Marca')
+            ->latest('linea_vehiculos.created_at')->paginate($perPage);
         }
 
         return view('linea-vehiculos.index', compact('lineavehiculos'));
@@ -70,6 +74,7 @@ class LineaVehiculosController extends Controller
     public function show($id)
     {
         $lineavehiculo = LineaVehiculo::join('marca_vehiculos', 'linea_vehiculos.IdMarca', '=', 'marca_vehiculos.id')
+        ->select('linea_vehiculos.LineaVehiculo', 'linea_vehiculos.id as idLinea', 'marca_vehiculos.Marca')
             ->findOrFail($id);
 
         return view('linea-vehiculos.show', compact('lineavehiculo'));

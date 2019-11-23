@@ -23,12 +23,12 @@
                                         <th>ID</th><td>{{ $vehiculo->id }}</td>
                                     </tr>
                                     <tr><th> Placa </th><td> {{ $vehiculo->Placa }} </td></tr>
-                                    <tr><th> Tipo Vehículo </th><td> {{ $vehiculo->IdTipoVehiculo }} </td></tr>
-                                    <tr><th> Marca </th><td> {{ $vehiculo->IdMarca }} </td></tr>
-                                    <tr><th> Modelo </th><td> {{ $vehiculo->IdModelo }} </td></tr>
-                                    <tr><th> Color </th><td> {{ $vehiculo->IdColor }} </td></tr>
+                                    <tr><th> Tipo Vehículo </th><td> {{ $vehiculo->TipoVehiculo }} </td></tr>
+                                    <tr><th> Marca </th><td> {{ $vehiculo->Marca }} </td></tr>
+                                    <tr><th> Modelo </th><td> {{ $vehiculo->Modelo }} </td></tr>
+                                    <tr><th> Color </th><td> {{ $vehiculo->Color }} </td></tr>
                                     <tr><th> Licencia Tránsito </th><td> {{ $vehiculo->Licenciatransito }} </td></tr>
-                                    <tr><th> Ciudad Licencia </th><td> {{ $vehiculo->IdCiudadLicencia }} </td></tr>
+                                    <tr><th> Ciudad Licencia </th><td> {{ $vehiculo->NombreCiudad }} </td></tr>
                                     <tr><th> Cliente </th><td> {{ $vehiculo->IdUsuario }} </td></tr>
                                     <tr><th> Modalidad Servicio </th><td> {{ $vehiculo->IdModalidadServicio }} </td></tr>
                                 </tbody>
