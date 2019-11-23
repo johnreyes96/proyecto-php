@@ -55,7 +55,11 @@
 </div>
 <div class="form-group {{ $errors->has('IdUsuario') ? 'has-error' : ''}}">
     <label for="IdUsuario" class="control-label">Cliente</label>
-    <input class="form-control" name="IdUsuario" type="number" id="IdUsuario" value="{{ isset($vehiculo->IdUsuario) ? $vehiculo->IdUsuario : ''}}" >
+    <select class="form-control" name="IdUsuario" id="IdUsuario" >
+        @foreach($clientes as $cliente)
+            <option value="{{ $cliente->id }}" {{ isset($vehiculo->IdUsuario) && $vehiculo->IdUsuario == $cliente->id ? 'selected' : ''}} >{{ $cliente->Cliente }}</option>
+        @endforeach
+    </select>
     {!! $errors->first('IdUsuario', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('IdModalidadServicio') ? 'has-error' : ''}}">

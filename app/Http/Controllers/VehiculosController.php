@@ -51,7 +51,13 @@ class VehiculosController extends Controller
         $modeloVehiculos = DB::select('CALL getAllModeloVehiculos()');
         $colorVehiculos = DB::select('CALL getAllColorVehiculos()');
         $ciudades = DB::select('CALL getAllCiudades()');
-        return view('vehiculos.create', compact('tipoVehiculos', 'marcas', 'modeloVehiculos', 'colorVehiculos', 'ciudades'));
+        $clientes = DB::select('CALL getAllClientes()');
+        return view('vehiculos.create', compact('tipoVehiculos',
+            'marcas',
+            'modeloVehiculos',
+            'colorVehiculos',
+            'ciudades',
+            'clientes'));
     }
 
     /**
@@ -84,6 +90,7 @@ class VehiculosController extends Controller
             ->join('marca_vehiculos', 'vehiculos.IdMarca', '=', 'marca_vehiculos.id')
             ->join('modelo_vehiculos', 'vehiculos.IdModelo', '=', 'modelo_vehiculos.id')
             ->join('ciudades', 'vehiculos.IdCiudadLicencia', '=', 'ciudades.id')
+            ->join('users', 'vehiculos.IdUsuario', '=', 'users.id')
             ->findOrFail($id);
 
         return view('vehiculos.show', compact('vehiculo'));
@@ -103,9 +110,16 @@ class VehiculosController extends Controller
         $modeloVehiculos = DB::select('CALL getAllModeloVehiculos()');
         $colorVehiculos = DB::select('CALL getAllColorVehiculos()');
         $ciudades = DB::select('CALL getAllCiudades()');
+        $clientes = DB::select('CALL getAllClientes()');
         $vehiculo = Vehiculo::findOrFail($id);
 
-        return view('vehiculos.edit', compact('vehiculo', 'tipoVehiculos', 'marcas', 'modeloVehiculos', 'colorVehiculos', 'ciudades'));
+        return view('vehiculos.edit', compact('vehiculo',
+            'tipoVehiculos',
+            'marcas',
+            'modeloVehiculos',
+            'colorVehiculos',
+            'ciudades',
+            'clientes'));
     }
 
     /**

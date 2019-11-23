@@ -31,7 +31,8 @@
                                 'marcas' => $marcas,
                                 'modeloVehiculos' => $modeloVehiculos,
                                 'colorVehiculos' => $colorVehiculos,
-                                'ciudades' => $ciudades])
+                                'ciudades' => $ciudades,
+                                'clientes' => $clientes])
 
                         </form>
 
