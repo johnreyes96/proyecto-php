@@ -28,3 +28,4 @@ Route::resource('turnos-trabajo', 'TurnosTrabajoController');
 Route::resource('vehiculos', 'VehiculosController');
 Route::resource('linea-vehiculos', 'LineaVehiculosController');
 Route::resource('estado-servicios', 'EstadoServiciosController');
+Route::resource('servicios', 'ServiciosController');
