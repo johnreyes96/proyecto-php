@@ -32,7 +32,8 @@
                                 'modeloVehiculos' => $modeloVehiculos,
                                 'colorVehiculos' => $colorVehiculos,
                                 'ciudades' => $ciudades,
-                                'clientes' => $clientes])
+                                'clientes' => $clientes,
+                                'modalidadServicios' => $modalidadServicios])
 
                         </form>
 
